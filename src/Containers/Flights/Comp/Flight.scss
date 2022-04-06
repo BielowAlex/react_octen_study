@@ -1,0 +1,21 @@
+$steelBlue: #3D4F9F;
+$mediumLightSteelBlue: #697CA6;
+$lightSteelBlue: #8E96B7;
+$extraLightSteelBlue: #D8E3FE;
+
+.flight{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-bottom: 3px solid $lightSteelBlue;
+  h2{
+    margin-top: 20px;
+    color:$lightSteelBlue ;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    font-size: 42px;
+    text-shadow: $steelBlue 1px 0px 2px;
+  }
+}

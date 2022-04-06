@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
 $steelBlue: #3D4F9F;
 $mediumLightSteelBlue: #697CA6;
 $lightSteelBlue: #8E96B7;
@@ -15,38 +17,3 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-.wrap {
-  display: flex;
-  height: 500px;
-  overflow: hidden;
-  margin-bottom: 30px;
-
-  .usersList, .postsList {
-    overflow-y: scroll;
-  }
-}
-
-ul {
-  padding: 5px;
-  color: $mediumLightSteelBlue;
-  list-style-type: none;
-
-  li {
-    padding-left: 20px;
-  }
-}
-
-h2 {
-  font-weight: bold;
-  color: $steelBlue;
-  text-transform: uppercase;
-  border-bottom: 2px solid $steelBlue;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.commentsList{
-  width: 100%;
-  overflow-y:scroll;
-  height: 260px;
-}
