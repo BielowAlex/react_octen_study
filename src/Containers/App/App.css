@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,40 +8,6 @@
 body {
   background: #D8E3FE;
   font-family: "Quicksand", sans-serif;
-}
-
-.wrap {
-  display: flex;
-  height: 500px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-.wrap .usersList, .wrap .postsList {
-  overflow-y: scroll;
-}
-
-ul {
-  padding: 5px;
-  color: #697CA6;
-  list-style-type: none;
-}
-ul li {
-  padding-left: 20px;
-}
-
-h2 {
-  font-weight: bold;
-  color: #3D4F9F;
-  text-transform: uppercase;
-  border-bottom: 2px solid #3D4F9F;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.commentsList {
-  width: 100%;
-  overflow-y: scroll;
-  height: 260px;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -1,0 +1,18 @@
+.flight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-bottom: 3px solid #8E96B7;
+}
+.flight h2 {
+  margin-top: 20px;
+  color: #8E96B7;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  font-size: 42px;
+  text-shadow: #3D4F9F 1px 0px 2px;
+}
+
+/*# sourceMappingURL=Flight.css.map */
