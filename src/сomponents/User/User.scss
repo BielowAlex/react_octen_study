@@ -1,0 +1,35 @@
+$steelBlue: #3D4F9F;
+$mediumLightSteelBlue: #697CA6;
+$lightSteelBlue: #8E96B7;
+$extraLightSteelBlue: #D8E3FE;
+
+
+.user_sec{
+
+  border-bottom: 2px solid $lightSteelBlue;
+  padding: 10px;
+  .user_bio{
+    display: flex;
+    li{
+      transition: all 0.4s ease;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+  button{
+    margin-left: calc(50% - 100px);
+    padding: 5px 10px;
+    background: $steelBlue;
+    border: 1px solid $steelBlue;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    &:hover{
+      color: $steelBlue;
+      background: $extraLightSteelBlue;
+    }
+  }
+}

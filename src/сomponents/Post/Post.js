@@ -2,11 +2,11 @@ import React from 'react';
 import './Post.css'
 
 const Post = ({post}) => {
-    const {userId,id, title, body} = post;
+    const { title, body} = post;
     return (
         <div>
             <ul className="post">
-                <li><h2>User id:{userId};Post id:{id} {title}</h2></li>
+                <li><h3>Title: {title}</h3></li>
                 <li>{body}</li>
             </ul>
         </div>

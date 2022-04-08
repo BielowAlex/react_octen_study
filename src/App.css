@@ -10,6 +10,7 @@ body {
 }
 
 .wrap {
+  border-bottom: 2px solid #3D4F9F;
   display: flex;
   height: 500px;
   overflow: hidden;
@@ -35,12 +36,19 @@ h2 {
   border-bottom: 2px solid #3D4F9F;
   text-align: center;
   margin-bottom: 10px;
+  position: sticky;
+  background: #D8E3FE;
+  top: 0;
 }
 
 .commentsList {
   width: 100%;
   overflow-y: scroll;
   height: 260px;
+}
+
+._hide {
+  display: none;
 }
 
 /*# sourceMappingURL=App.css.map */
