@@ -15,48 +15,69 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-.wrap {
-  border-bottom: 2px solid #3D4F9F ;
+.sec_form{
+  background: $steelBlue;
   display: flex;
-  height: 500px;
-  overflow: hidden;
-  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px calc(50% - 400px);
+  border-bottom: 7px solid $mediumLightSteelBlue;
 
-  .usersList, .postsList {
-    overflow-y: scroll;
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: fit-content;
+    position: relative;
+    row-gap: 20px;
+    align-items: center;
+
+    .input{
+      color: $extraLightSteelBlue;
+      label{
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        h2{
+          padding: 0;
+        }
+
+        input{
+          padding: 5px 10px;
+          background: $extraLightSteelBlue;
+          border:2px solid $mediumLightSteelBlue;
+          border-radius: 20px;
+          color: #3D4F9F;
+          font-size: 18px;
+        }
+        span{
+          border: 1px solid darkred;
+          background: rgba(139, 0, 0, 0.73);
+          color: indianred;
+          padding: 5px;
+          position: absolute;
+          width: 200px;
+          left: 260px;
+          transform: translate(0,30px);
+        }
+      }
+
+    }
+    button{
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: $steelBlue;
+      color: $extraLightSteelBlue;
+      border: 3px solid $extraLightSteelBlue;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.6s ease;
+
+      &:hover{
+        border-radius: 0;
+        text-shadow: 1px 1px 10px $extraLightSteelBlue;
+      }
+    }
   }
-}
-
-ul {
-  padding: 5px;
-  color: $mediumLightSteelBlue;
-  list-style-type: none;
-
-  li {
-    padding-left: 20px;
-  }
-}
-
-h2 {
-  font-weight: bold;
-  color: $steelBlue;
-  text-transform: uppercase;
-  border-bottom: 2px solid $steelBlue;
-  text-align: center;
-  margin-bottom: 10px;
-  position: sticky;
-  background: $extraLightSteelBlue;
-  top:0;
-}
-
-.commentsList{
-  width: 100%;
-  overflow-y:scroll;
-  height: 260px;
-}
-
-.posts_sec{}
-
-._hide{
-  display: none;
 }

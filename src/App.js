@@ -1,40 +1,18 @@
 import './App.css';
-import Users from "./сomponents/Users/Users";
-
-import UserDetails from "./сomponents/UserDetails/UserDetails";
-
-import React, {useEffect, useState} from "react";
-import {userServices} from "./Services";
-import Post from "./сomponents/Post/Post";
+import React, {useState} from "react";
+import CarForm from "./сomponents/CarForm/CarForm";
+import Cars from "./сomponents/Cars/Cars";
 
 
 function App() {
-    const [user, setUser] = useState();
-    const [posts, setPosts] = useState([]);
-    let postsSec;
-    const getUser = (user) => {
-        setUser(user);
-        postsSec = document.querySelector('.posts_sec');
-        postsSec.classList.add('_hide');
-    }
-
-    const getUserPosts = (id) => {
-        userServices.getPostByUserID(id).then(({data}) => setPosts(data));
-        postsSec = document.querySelector('.posts_sec');
-        postsSec.classList.remove('_hide');
-    }
-
+    const [newCar, setNewCar] = useState(null);
+    const [deletedCar, setDeletedCar] = useState(null);
+    const [carForUpdate, setCarForUpdate] = useState(null);
 
     return (
-        <div className="App">
-            <div className="wrap">
-                <Users getUser={getUser}/>
-                {user && <UserDetails user={user} getUserPosts={getUserPosts}/>}
-            </div>
-            <div className="posts_sec _hide">
-                    <h2>Posts</h2>
-                {posts.map(post => <Post key={post.id} post={post}/>)}
-            </div>
+        <div>
+            <CarForm setNewCar={setNewCar} carForUpdate={carForUpdate}/>
+            <Cars newCar={newCar} deletedCar={deletedCar} setDeletedCar={setDeletedCar} setCarForUpdate={setCarForUpdate}/>
         </div>
     );
 }

@@ -1,0 +1,52 @@
+$steelBlue: #3D4F9F;
+$mediumLightSteelBlue: #697CA6;
+$lightSteelBlue: #8E96B7;
+$extraLightSteelBlue: #D8E3FE;
+
+.car_info{
+  display: flex;
+  flex-direction: column;
+  color: $mediumLightSteelBlue;
+  row-gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid $mediumLightSteelBlue;
+  transition: all 0.6s ease;
+  height: 180px;
+  width: 100%;
+  position: relative;
+
+  h2{
+    transition: all 0.6s ease;
+    &:hover{
+      color: $steelBlue;
+    }
+  }
+
+  &:hover{
+    color: $extraLightSteelBlue;
+    background: $mediumLightSteelBlue;
+  }
+
+  .update_car_info{
+    display: flex;
+    column-gap: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    .btn{
+      border: 2px solid $extraLightSteelBlue;
+      border-radius: 10px;
+      font-size: 35px;
+      padding: 5px;
+      color: $extraLightSteelBlue;
+      transition: all 0.6s ease;
+
+      &:hover{
+        color: $steelBlue;
+        border: 2px solid $steelBlue;
+      }
+    }
+  }
+}

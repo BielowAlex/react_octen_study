@@ -1,10 +1,8 @@
 const baseUrl = process.env.REACT_APP_API;
 
 const urls = {
-    users:'/users',
-    posts:'/posts',
-
-}
+    cars:'/cars'
+  }
 
 export default  baseUrl;
 export {
