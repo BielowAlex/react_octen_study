@@ -1,0 +1,28 @@
+@import "../Constants/colors";
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: $steelBlue;
+  border-bottom: $mediumLightSteelBlue;
+  font-family: 'Quicksand', sans-serif;
+
+  a{
+    color: $extraLightSteelBlue;
+    text-decoration: none;
+    font-size: 34px;
+    padding: 5px 10px;
+    transition: all 0.6s ease;
+
+    &:hover{
+      color: $lightSteelBlue;
+      transform: scale(1.1);
+    }
+  }
+
+
+  & a[class='active']{
+    color: $lightSteelBlue;
+  }
+}

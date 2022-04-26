@@ -1,19 +1,29 @@
 import './App.css';
-import React, {useState} from "react";
-import CarForm from "./сomponents/CarForm/CarForm";
-import Cars from "./сomponents/Cars/Cars";
+import {Route, Routes} from "react-router-dom";
+
+import MainLayout from "./Layouts/MainLayout";
+import UserPage from "./Pages/UserPage/UserPage";
+import PostPage from "./Pages/PostPage/PostPage";
+import NotFound from "./Pages/NotFound/NotFound";
+import HomePage from "./Pages/HomePage/HomePage";
+import UserDetails from "./сomponents/UserDetails/UserDetails";
 
 
 function App() {
-    const [newCar, setNewCar] = useState(null);
-    const [deletedCar, setDeletedCar] = useState(null);
-    const [carForUpdate, setCarForUpdate] = useState(null);
 
     return (
-        <div>
-            <CarForm setNewCar={setNewCar} carForUpdate={carForUpdate}/>
-            <Cars newCar={newCar} deletedCar={deletedCar} setDeletedCar={setDeletedCar} setCarForUpdate={setCarForUpdate}/>
-        </div>
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route path={'/'} element={<HomePage/>}/>
+                <Route path={'/users'} element={<UserPage/>}>
+                    <Route path={':id'} element={<UserDetails/>}/>
+                </Route>
+                <Route path={'/posts'} element={<PostPage/>}>
+                    <Route path={':id'} element={<UserDetails/>}/>
+                </Route>
+                <Route path={'*'} element={<NotFound/>}/>
+            </Route>
+        </Routes>
     );
 }
 
