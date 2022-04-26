@@ -1,39 +1,69 @@
 import './App.css';
-import Users from "./сomponents/Users/Users";
+import {useReducer} from "react"
 
-import UserDetails from "./сomponents/UserDetails/UserDetails";
 
-import React, {useEffect, useState} from "react";
-import {userServices} from "./Services";
-import Post from "./сomponents/Post/Post";
+const init = (initCount) => {
+    return {count1: initCount, count2: initCount, count3: initCount};
+}
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'inc':
+            if (action.payload === 1) {
+                return {...state, count1: state.count1 + 1}
+            } else if (action.payload === 2) {
+                return {...state, count2: state.count2 + 1}
+            } else if (action.payload === 3) {
+                return {...state, count3: state.count3 + 1}
+            }
+        case 'dec':
+            if (action.payload === 1) {
+                return {...state, count1: state.count1 - 1}
+            } else if (action.payload === 2) {
+                return {...state, count2: state.count2 - 1}
+            } else if (action.payload === 3) {
+                return {...state, count3: state.count3 - 1}
+            }
+        case 'reset':
+            if (action.payload === 1) {
+                return {...state, count1:0}
+            } else if (action.payload === 2) {
+                return {...state, count2:0}
+            } else if (action.payload === 3) {
+                return {...state, count3:0}
+            }
 
+    }
+}
 
 function App() {
-    const [user, setUser] = useState();
-    const [posts, setPosts] = useState([]);
-    let postsSec;
-    const getUser = (user) => {
-        setUser(user);
-        postsSec = document.querySelector('.posts_sec');
-        postsSec.classList.add('_hide');
-    }
 
-    const getUserPosts = (id) => {
-        userServices.getPostByUserID(id).then(({data}) => setPosts(data));
-        postsSec = document.querySelector('.posts_sec');
-        postsSec.classList.remove('_hide');
-    }
-
+    const [state, dispatch] = useReducer(reducer, 0, init);
 
     return (
-        <div className="App">
-            <div className="wrap">
-                <Users getUser={getUser}/>
-                {user && <UserDetails user={user} getUserPosts={getUserPosts}/>}
+        <div className='App'>
+            <div className="c">
+                <h2>{state.count1}</h2>
+                <div className="c_btns">
+                    <button onClick={() => dispatch({type: 'inc', payload: 1})}>inc</button>
+                    <button onClick={() => dispatch({type: 'dec', payload: 1})}>dec</button>
+                    <button onClick={() => dispatch({type: 'reset', payload: 1})}>reset</button>
+                </div>
             </div>
-            <div className="posts_sec _hide">
-                    <h2>Posts</h2>
-                {posts.map(post => <Post key={post.id} post={post}/>)}
+            <div className="c">
+                <h2>{state.count2}</h2>
+                <div className="c_btns">
+                    <button onClick={() => dispatch({type: 'inc', payload: 2})}>inc</button>
+                    <button onClick={() => dispatch({type: 'dec', payload: 2})}>dec</button>
+                    <button onClick={() => dispatch({type: 'reset', payload: 2})}>reset</button>
+                </div>
+            </div>
+            <div className="c">
+                <h2>{state.count3}</h2>
+                <div className="c_btns">
+                    <button onClick={() => dispatch({type: 'inc', payload: 3})}>inc</button>
+                    <button onClick={() => dispatch({type: 'dec', payload: 3})}>dec</button>
+                    <button onClick={() => dispatch({type: 'reset', payload: 3})}>reset</button>
+                </div>
             </div>
         </div>
     );
