@@ -9,46 +9,63 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.wrap {
-  border-bottom: 2px solid #3D4F9F;
+.forms{
   display: flex;
-  height: 500px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-.wrap .usersList, .wrap .postsList {
-  overflow-y: scroll;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid lightslategray;
 }
 
-ul {
-  padding: 5px;
-  color: #697CA6;
-  list-style-type: none;
-}
-ul li {
-  padding-left: 20px;
+form{
+  display: flex;
+  column-gap: 10px;
 }
 
-h2 {
-  font-weight: bold;
-  color: #3D4F9F;
-  text-transform: uppercase;
-  border-bottom: 2px solid #3D4F9F;
-  text-align: center;
-  margin-bottom: 10px;
-  position: sticky;
-  background: #D8E3FE;
-  top: 0;
+form input{
+  background: initial;
+  padding: 3px 5px;
+  border: 2px solid lightslategray;
+  color: lightslategray;
+  border-radius: 5px;
 }
 
-.commentsList {
-  width: 100%;
-  overflow-y: scroll;
-  height: 260px;
+form button{
+  background: initial;
+  padding: 3px 5px;
+  border: 2px solid lightslategray;
+  color: lightslategray;
+  border-radius: 5px;
+  transition: all 0.4s linear;
+  cursor: pointer;
 }
 
-._hide {
-  display: none;
+form button:hover{
+  background: lightslategray;
+  color: #D8E3FE ;
 }
 
-/*# sourceMappingURL=App.css.map */
+.out{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.out>ul{
+  list-style-type:none ;
+  color: lightslategray;
+}
+li>button{
+  background: initial;
+  padding: 3px 5px;
+  border: 2px solid lightslategray;
+  color: lightslategray;
+  border-radius: 5px;
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+
+li>button:hover{
+  background: lightslategray;
+  color: #D8E3FE ;
+}
